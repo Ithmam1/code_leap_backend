@@ -1,1 +1,1 @@
-web: gunicorn leap.wsgi --log-file -
+web: python manage.py collectstatic --noinput && python manage.py migrate --run-syncdb && gunicorn leap.wsgi --log-file -
